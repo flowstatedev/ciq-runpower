@@ -1,1 +1,1 @@
-# ciq-runpower
+# Run Power for Garmin Connect IQ
