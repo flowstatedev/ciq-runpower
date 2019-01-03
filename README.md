@@ -11,5 +11,8 @@ Read the [manual](https://github.com/flowstatedev/ciq-runpower/wiki).
 ***
 
 ## Credits
-Power Icon by Kamaluddin, ID: https://thenounproject.com/search/?q=power&i=1713921  
-Running Watch by Charlotte Vogel from the Noun Project: https://thenounproject.com/search/?q=running%20watch&i=343723
+Power Icon by Kamaluddin, ID:
+https://thenounproject.com/search/?q=power&i=1713921  
+
+Running Watch by Charlotte Vogel from the Noun Project:
+https://thenounproject.com/search/?q=running%20watch&i=343723
