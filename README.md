@@ -1,6 +1,6 @@
 # Run Power for Garmin Connect IQ
 
-A data field app for Garmin Connect IQ watches that gives you Power run mode.
+A data field app for Garmin Connect IQ watches that gives you Power in run mode.
 
 Get the <a href="https://apps.garmin.com/en-US/apps/a054f515-576a-4a28-b8e5-87987ba737e1" target="_blank">app</a>.
 
