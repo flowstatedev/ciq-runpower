@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Run Power+ Settings (PREVIEW)</title>
+	
+	<!-- link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"-->
+	<!-- link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"-->	
+
+
+	<!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css"-->
+	<link rel="stylesheet" href="lib/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<!--script src="https://code.jquery.com/jquery-3.3.1.min.js"></script-->
+	<script src="lib/jquery/jquery-3.3.1.min.js"></script>
+
+
+	<!--link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" /-->
+	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script-->
+
+	<!--link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script-->
+	<link href="lib/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+	<script src="lib/select2/4.0.6-rc.0/js/select2.min.js"></script>
+	
+	
+	<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"-->
+	<link rel="stylesheet" href="lib/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="lib/jquery-palette-color-picker/src/palette-color-picker.css">
+	<script src="lib/jquery-palette-color-picker/src/palette-color-picker.min.js"></script>
+
+	<link rel="stylesheet" href="lib/select2-bootstrap-theme/dist/select2-bootstrap.min.css">
+	
+	
+
+		 <!-- Include SmartWizard CSS -->
+	<link href="lib/smartwizard/dist/css/smart_wizard.css" rel="stylesheet" type="text/css" />
+
+	<!-- Optional SmartWizard theme -->
+	<!--link href="lib/smartwizard/dist/css/smart_wizard_theme_circles.css" rel="stylesheet" type="text/css" /-->
+	<link href="lib/smartwizard/dist/css/smart_wizard_theme_arrows.css" rel="stylesheet" type="text/css" />
+	<!--link href="lib/smartwizard/dist/css/smart_wizard_theme_dots.css" rel="stylesheet" type="text/css" /-->
+	<script type="text/javascript" src="lib/smartwizard/dist/js/jquery.smartWizard.min.js"></script>
+	
+	<!--script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script-->
+	<script src="lib/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="lib/image-picker/image-picker.css">
+	<script src="lib/image-picker/image-picker.js" type="text/javascript"></script>
+	
+	<style type="text/css">
+		.palette-color-picker-bubble {
+			z-index:9999;
+		}
+		
+		.control-group-label{
+			padding-top: 0px !important;
+		}
+		
+		.select2-container {
+			width: 100% !important;
+			padding: 0;
+		}
+		
+		/*.sw-toolbar {
+			float: right;
+		}*/
+		
+		body {
+			font-size: 16px; /*prevent zoom in ios*/
+		}
+		
+		.form-control,
+		.input-group-addon {
+			font-size: 16px;
+		}
+		
+		.select2-container--bootstrap .select2-selection {
+			font-size: 16px;
+		}
+		
+		.select2-container--bootstrap .select2-search--dropdown .select2-search__field {
+			font-size: 16px;
+		}
+		.image_picker_selector {
+			padding-top:10px !important;
+		
+		}
+		/*input[type="color"],
+		input[type="date"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="email"],
+		input[type="month"],
+		input[type="number"],
+		input[type="password"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="text"],
+		input[type="time"],
+		input[type="url"],
+		input[type="week"],
+		select:focus,
+		textarea {
+			font-size: 16px;
+		}*/		
+	</style>
+	
+	</head>
+	<body>
+ <header>
+		<div class="navbar navbar-inverse">
+		<div class="container d-flex justify-content-between">
+			<span class="navbar-brand d-flex align-items-center">
+			<strong>Run Power+ Settings (PREVIEW)</strong>
+			</span>
+		</div>
+		</div>
+	</header>	
+	<main role="main">
+		<div class="container">
+			<form id="runpower_form" data-toggle="validator" class="form-horizontal" style="display:none">
+				<div id="smartwizard">
+					<ul>
+						<li><a href="#step-1"><!--Step 1<br /--><small>Getting Started</small></a></li>
+						<li><a href="#step-2"><!--Step 2<br /--><small>Power Zones</small></a></li>
+						<li><a href="#step-3"><!--Step 3<br /--><small>Power Alerts</small></a></li>
+						<li><a href="#step-4"><!--Step 4<br /--><small>Data Fields</small></a></li>
+					</ul>
+					<div>
+						<div id="step-1">
+							<div id="form-step-0">
+							<div class="form-group row">
+							<label for="watch_model" class="col-sm-3 col-xs-12 control-label">Watch Model</label> 
+							<div class="col-sm-9 col-xs-12">
+							<select id="watch_model" name="watch_model" class="select form-control select2" required >
+								<option value=""></option>
+								<option value="approachs60">Approach S60</option>
+								<option value="d2bravo">D2 Bravo</option>
+								<option value="d2bravo_titanium">D2 Bravo Titanium</option>
+								<option value="d2charlie">D2 Charlie</option>
+								<option value="d2delta">D2 Delta</option>
+								<option value="d2delta_px">D2 Delta PX</option>
+								<option value="d2delta_s">D2 Delta S</option>
+								<option value="descentmk1">Descent MK1</option>
+								<option value="fenix3">Fenix 3</option>
+								<option value="fenix3hr">Fenix 3 HR</option>
+								<option value="fenix5">Fenix 5</option>
+								<option value="fenix5plus">Fenix 5 Plus</option>
+								<option value="fenix5s">Fenix 5S</option>
+								<option value="fenix5splus">Fenix 5S Plus</option>
+								<option value="fenix5x">Fenix 5X</option>
+								<option value="fenix5xplus">Fenix 5X Plus</option>
+								<option value="fenixchronos">Fenix Chronos</option>
+								<option value="fr230">Forerunner 230</option>
+								<option value="fr235">Forerunner 235</option>
+								<option value="fr630">Forerunner 630</option>
+								<option value="fr645">Forerunner 645</option>
+								<option value="fr645m">Forerunner 645 Music</option>
+								<option value="fr735xt">Forerunner 735XT</option>
+								<option value="fr920xt">Forerunner 920XT</option>
+								<option value="fr935">Forerunner 935</option>
+								<option value="va">Vivoactive</option>
+								<option value="va3">Vivoactive 3</option>
+								<option value="va3m">Vivoactive 3 Music</option>
+								<option value="vahr">Vivoactive HR</option>
+								</select>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="theme_colour" class="col-sm-3 col-xs-12 control-label">Theme Color</label> 
+							<div class="col-sm-9 col-xs-12">
+								<div>
+									<input style="display:none" id="theme_colour" name="theme_colour" type="text" class="form-control here" required value="#0000ff"/>
+									<div class="help-block with-errors"></div>
+								<!--select id="theme_colour" name="select3" class="select form-control">
+								<option value="rabbit">Rabbit</option>
+								<option value="duck">Duck</option>
+								<option value="fish">Fish</option>
+								</select-->
+								</div>
+							</div>
+							</div>
+							<div class="form-group row">
+								<label for="field_layout" class="col-sm-3 col-xs-12 control-label">Field Layout</label> 
+								<div class="col-sm-9 col-xs-12">
+									<select id="field_layout" name="field_layout" class="select form-control">
+										<option data-img-src="img/layouts/6A.png" value="6a" selected>6 Fields A</option>
+										<option data-img-src="img/layouts/6B.png" value="6b">6 Fields B</option>
+										<option data-img-src="img/layouts/6C.png" value="6c">6 Fields C</option>
+										<option data-img-src="img/layouts/5.png" value="5">5 Fields</option>
+										<option data-img-src="img/layouts/4A.png" value="4a">4 Fields A</option>
+										<option data-img-src="img/layouts/4B.png" value="4b">4 Fields B</option>
+										<option data-img-src="img/layouts/2.png" value="2">2 Fields</option>
+									</select>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div id="step-2">
+							<div id="form-step-1">
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label">Power Zones</label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Number of Zones</div>
+										<select id="select2" name="select2" class="select form-control">
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										</select>
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 1 Min</div>
+									<input id="text" name="text" value="162" type="number" pattern="[0-9]*" inputmode="numeric" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 2 Min</div>
+									<input id="text" name="text" value="199" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 3 Min</div>
+									<input id="text" name="text" value="224" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 4 Min</div>
+									<input id="text" name="text" value="249" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 5 Min</div>
+									<input id="text" name="text" value="286" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 5 Max</div>
+									<input id="text" name="text" type="number" value="324" type="number" pattern="[0-9]*" inputmode="numeric"  min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label class="col-sm-3 col-xs-12 control-label" for="text4">FTP</label> 
+							<div class="col-sm-9 col-xs-12">
+								<input id="text4" name="text4" type="number" value="249" type="number" pattern="[0-9]*" inputmode="numeric"  min="0" aria-describedby="text4HelpBlock" class="form-control here"> 
+								<span id="text4HelpBlock" class="form-text text-muted">(Optional) Used to calculate %FTP and IF</span>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label class="col-sm-3 col-xs-12 control-label control-group-label">Power Zone Colors</label> 
+							<div class="col-sm-9 col-xs-12">
+								<label class="custom-control custom-radio ">
+								<input name="radio" type="radio" class="custom-control-input" value="auto" checked> 
+								<span class="custom-control-indicator"></span> 
+								<span class="custom-control-description">Auto</span>
+								</label>
+								<label class="custom-control custom-radio">
+								<input name="radio" type="radio" class="custom-control-input" value="custom"> 
+								<span class="custom-control-indicator"></span> 
+								<span class="custom-control-description">Custom</span>
+								</label>
+							</div>
+							</div>
+							<div style="display:none">
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 0 Color</div>
+									<input id="text" name="text" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 1 Color</div>
+									<input id="text" name="text" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 2 Color</div>
+									<input id="text" name="text" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 3 Color</div>
+									<input id="text" name="text" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 4 Color</div>
+									<input id="text" name="text" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone 5 Color</div>
+									<input id="text" name="text" type="number" min="0" required="required" class="form-control here">
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							</div>
+							</div>
+						</div>
+						<div id="step-3">
+							<div id="form-step-2">
+							<div class="form-group row">
+							<label class="col-sm-3 col-xs-12	control-label control-group-label">Power Alerts</label> 
+							<div class="col-sm-9 col-xs-12">
+								<label class="custom-control custom-radio">
+								<input name="radio1" type="radio" class="custom-control-input" value="off"> 
+								<span class="custom-control-indicator"></span> 
+								<span class="custom-control-description">Off</span>
+								</label>
+								<label class="custom-control custom-radio">
+								<input name="radio1" type="radio" class="custom-control-input" value="lowhigh" checked> 
+								<span class="custom-control-indicator"></span> 
+								<span class="custom-control-description">Low/High</span>
+								</label>
+								<label class="custom-control custom-radio">
+								<input name="radio1" type="radio" class="custom-control-input" value="zone"> 
+								<span class="custom-control-indicator"></span> 
+								<span class="custom-control-description">By Zone</span>
+								</label>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text7" class="col-sm-3 col-xs-12 control-label">Power Alert Frequency</label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+								<input id="text7" name="text7" type="number" pattern="[0-9]*" inputmode="numeric"  min="1" value="30" required="required" class="form-control here"> 
+								<div class="input-group-addon append">seconds</div>
+								</div>
+								<div class="help-block with-errors"></div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text7" class="col-sm-3 col-xs-12 control-label">Power Alert Limit</label> 
+							<div class="col-sm-9 col-xs-12">
+								<input id="text7" name="text7" type="number" pattern="[0-9]*" inputmode="numeric"  min="0" value="3" required="required" class="form-control here"> 
+								<div class="help-block with-errors">Enter <b>0</b> for unlimited alerts</div>
+								
+							</div>
+							</div>
+							<div class="form-group row">
+							<label class="col-sm-3 col-xs-12 control-label control-group-label">Power Alert Mode</label> 
+							<div class="col-sm-9 col-xs-12">
+								<label class="custom-control custom-radio">
+								<input name="radio2" type="radio" class="custom-control-input" value="activity"> 
+								<span class="custom-control-indicator"></span> 
+								<span class="custom-control-description">Activity</span>
+								</label>
+								<label class="custom-control custom-radio">
+								<input name="radio2" type="radio" class="custom-control-input" value="laps" checked> 
+								<span class="custom-control-indicator"></span> 
+								<span class="custom-control-description">Laps</span>
+								</label>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="select4" class="col-sm-3 col-xs-12 control-label">Number of Laps</label> 
+							<div class="col-sm-9 col-xs-12">
+								<input id="laps" name="laps" type="number" pattern="[0-9]*" inputmode="numeric" value="2" min="1" required="required" class="form-control here"> 
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text1" class="col-sm-3 col-xs-12 control-label">Lap 1</label> 
+							<div class="col-sm-3 col-xs-6">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Low</div>
+									<input id="text1" name="text1" type="number" pattern="[0-9]*" inputmode="numeric" required="required" class="form-control here" value="150">
+								</div>
+							</div>
+							<div class="col-sm-3 col-xs-6">
+								<div class="input-group">
+									<div class="input-group-addon prepend">High</div>
+										<input id="text6" name="text6" type="number" pattern="[0-9]*" inputmode="numeric" required="required" class="form-control here" value="200">
+								</div>
+							</div>
+							</div>
+							<div class="form-group row">
+							<label for="text1" class="col-sm-3 col-xs-12 control-label">Lap 2</label> 
+							<div class="col-sm-3 col-xs-6">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Low</div>
+									<input id="text1" name="text1" type="number" pattern="[0-9]*" inputmode="numeric" required="required" class="form-control here" value="175">
+								</div>
+							</div>
+							<div class="col-sm-3 col-xs-6">
+								<div class="input-group">
+									<div class="input-group-addon prepend">High</div>
+										<input id="text6" name="text6" type="number" pattern="[0-9]*" inputmode="numeric" required="required" class="form-control here" value="225">
+								</div>
+							</div>
+							</div>
+							<div class="form-group row" style="display:none">
+							<label for="text1" class="col-sm-3 col-xs-12 control-label">Power Alert - Lap 1</label> 
+							<div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+									<div class="input-group-addon prepend">Zone</div>
+									<input id="text1" name="text1" type="text" _required="_required" class="form-control here">
+								</div>
+							</div>
+							</div>
+							</div>
+						</div>
+						<div id="step-4">
+							<div id="form-step-3">
+							<div class="form-group row">
+								<label for="select5" class="col-sm-3 col-xs-12 control-label">Header</label> 
+								<div class="col-sm-9 col-xs-12">
+									<select id="select5" name="select5" class="select form-control">
+									<option value="rabbit">Clock</option>
+									<option value="duck">Duck</option>
+									<option value="fish">Fish</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-3 col-xs-12 control-label control-group-label">Color Fields</label> 
+								<div class="col-sm-9 col-xs-12">
+									<label class="custom-control custom-checkbox">
+									<input name="checkbox" type="checkbox" checked="checked" class="custom-control-input" value="rabbit"> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">Power</span>
+									</label>
+									<label class="custom-control custom-checkbox">
+									<input name="checkbox" type="checkbox" class="custom-control-input" value="" checked="checked"> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">HR</span>
+									</label>
+									<label class="custom-control custom-checkbox">
+									<input name="checkbox" type="checkbox" class="custom-control-input" value="" checked="checked"> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">Cadence</span>
+									</label>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="select6" class="col-sm-3 col-xs-12 control-label">Data Field 1</label> 
+								<div class="col-sm-3 col-xs-6">
+									<select id="select6" name="select6" class="select form-control">
+									<option value="lap">Lap</option>
+									<option value="llap">Last Lap</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="col-sm-3 col-xs-6">
+									<select id="select7" name="select7" class="select form-control">
+									<option value="avg">Average</option>
+									<option value="min">Minimum</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+								<div class="col-sm-3 col-xs-12">
+									<select id="select8" name="select8" class="select form-control">
+									<option value="time">Time</option>
+									<option value="pace">Pace</option>
+									<option value="hr">Heart Rate</option>
+									<option value="power">Power</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="select6" class="col-sm-3 col-xs-12 control-label">Data Field 2</label> 
+								<div class="col-sm-3 col-xs-6">
+									<select id="select6" name="select6" class="select form-control">
+									<option value="lap">Lap</option>
+									<option value="llap">Last Lap</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="col-sm-3 col-xs-6">
+									<select id="select7" name="select7" class="select form-control">
+									<option value="avg">Average</option>
+									<option value="min">Minimum</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+								<div class="col-sm-3 col-xs-12">
+									<select id="select8" name="select8" class="select form-control">
+									<option value="time">Time</option>
+									<option value="pace">Pace</option>
+									<option value="hr">Heart Rate</option>
+									<option value="power">Power</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="select6" class="col-sm-3 col-xs-12 control-label">Data Field 3</label> 
+								<div class="col-sm-3 col-xs-6">
+									<select id="select6" name="select6" class="select form-control">
+									<option value="lap">Lap</option>
+									<option value="llap">Last Lap</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="col-sm-3 col-xs-6">
+									<select id="select7" name="select7" class="select form-control">
+									<option value="avg">Average</option>
+									<option value="min">Minimum</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+								<div class="col-sm-3 col-xs-12">
+									<select id="select8" name="select8" class="select form-control">
+									<option value="time">Time</option>
+									<option value="pace">Pace</option>
+									<option value="hr">Heart Rate</option>
+									<option value="power">Power</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="select6" class="col-sm-3 col-xs-12 control-label">Data Field 4</label> 
+								<div class="col-sm-3 col-xs-6">
+									<select id="select6" name="select6" class="select form-control">
+									<option value="lap">Lap</option>
+									<option value="llap">Last Lap</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="col-sm-3 col-xs-6">
+									<select id="select7" name="select7" class="select form-control">
+									<option value="avg">Average</option>
+									<option value="min">Minimum</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+								<div class="col-sm-3 col-xs-12">
+									<select id="select8" name="select8" class="select form-control">
+									<option value="time">Time</option>
+									<option value="pace">Pace</option>
+									<option value="hr">Heart Rate</option>
+									<option value="power">Power</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="select6" class="col-sm-3 col-xs-12 control-label">Data Field 5</label> 
+								<div class="col-sm-3 col-xs-6">
+									<select id="select6" name="select6" class="select form-control">
+									<option value="lap">Lap</option>
+									<option value="llap">Last Lap</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="col-sm-3 col-xs-6">
+									<select id="select7" name="select7" class="select form-control">
+									<option value="avg">Average</option>
+									<option value="min">Minimum</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+								<div class="col-sm-3 col-xs-12">
+									<select id="select8" name="select8" class="select form-control">
+									<option value="time">Time</option>
+									<option value="pace">Pace</option>
+									<option value="hr">Heart Rate</option>
+									<option value="power">Power</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="select6" class="col-sm-3 col-xs-12 control-label">Data Field 6</label> 
+								<div class="col-sm-3 col-xs-6">
+									<select id="select6" name="select6" class="select form-control">
+									<option value="lap">Lap</option>
+									<option value="llap">Last Lap</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="col-sm-3 col-xs-6">
+									<select id="select7" name="select7" class="select form-control">
+									<option value="avg">Average</option>
+									<option value="min">Minimum</option>
+									<option value="none" selected>...</option>
+									</select>
+								</div>
+								<div class="hidden-lg hidden-md hidden-sm">&nbsp;</div>
+								<div class="col-sm-3 col-xs-12">
+									<select id="select8" name="select8" class="select form-control">
+									<option value="time">Time</option>
+									<option value="pace">Pace</option>
+									<option value="hr">Heart Rate</option>
+									<option value="power">Power</option>
+									</select>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					<!--div class="form-group row">
+					<div class="offset-4 col-sm-9 col-xs-12">
+						<button name="submit" type="submit" class="btn btn-primary">Get Code</button>
+					</div>
+					</div-->
+			</form>
+		</div>
+	</main>
+	<script type="text/javascript">
+		var basic_palette = [
+					"#aa0000", // dark red 
+					"#00aa00", // dark green
+					"#0000ff", // dark blue
+					"#FF0000", // red
+					"#00ff00", // green
+					"#00aaff", // blue
+					"#aaaaaa",
+					"#555555",
+					"#aa00ff",
+					"#ff5500",
+					"#FFAA00",
+					"#ff00ff",				
+				]
+	
+		function init() {
+			$("#runpower_form").show();
+		
+			$.fn.select2.defaults.set( "theme", "bootstrap" );
+			$('.select2').select2({			
+				placeholder: "Select your watch...",
+				//width: null,
+				//containerCssClass: ':all:'	
+			});
+			
+			$('#theme_colour').paletteColorPicker({
+				colors: basic_palette,
+				clear_btn: null,
+				timeout: 30000,
+				onchange_callback: function(col) {
+					$(".palette-color-picker-button").trigger('pcp.fadeout');
+				}
+			});
+			
+			$("#field_layout").imagepicker({ hide_select:  false, show_label: true});
+			
+			init_wizard();
+		}
+		
+		var form_sel = "#runpower_form"
+		var wiz_sel = "#smartwizard"
+		function init_wizard() {
+					// Toolbar extra buttons
+			var btnFinish = $('<button></button>').text('Finish')
+											 .addClass('btn btn-info')
+											 .on('click', function(){
+													if( !$(this).hasClass('disabled')){
+														var elmForm = $(form_sel);
+														if(elmForm){
+															elmForm.validator('validate');
+															var elmErr = elmForm.find('.has-error');
+															if(elmErr && elmErr.length > 0){
+																alert('Oops we still have error in the form');
+																return false;
+															}else{
+																alert('Great! we are ready to submit form');
+																elmForm.submit();
+																return false;
+															}
+														}
+													}
+												});
+			var btnCancel = $('<button></button>').text('Cancel')
+											 .addClass('btn btn-danger')
+											 .on('click', function(){
+													$(wiz_sel).smartWizard("reset");
+													$(form_sel).find("input, textarea").val("");
+												});
+
+
+
+			// Smart Wizard
+			$(wiz_sel).smartWizard({
+					selected: 0,
+					//theme: 'dots',
+					theme: 'arrows',
+					transitionEffect:'fade',
+					toolbarSettings: {toolbarPosition: 'both'
+										//,
+										//toolbarExtraButtons: [/*btnCancel,*/ btnFinish]
+									},
+					autoAdjustHeight: false,
+					anchorSettings: {
+								markDoneStep: true, // add done css
+								markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
+								removeDoneStepOnNavigateBack: true, // While navigate back done step after active step will be cleared
+								enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
+							}
+				 });
+
+			$(wiz_sel).on("leaveStep", function(e, anchorObject, stepNumber, stepDirection) {
+				var elmForm = $("#form-step-" + stepNumber);
+				// stepDirection === 'forward' :- this condition allows to do the form validation
+				// only on forward navigation, that makes easy navigation on backwards still do the validation when going next
+				if(stepDirection === 'forward' && elmForm){
+					elmForm.validator('validate');
+					var elmErr = elmForm.children('.has-error');
+					if(elmErr && elmErr.length > 0){
+						// Form validation failed
+						return false;
+					}
+				}
+				return true;
+			});
+
+			$(wiz_sel).on("showStep", function(e, anchorObject, stepNumber, stepDirection) {
+				// Enable finish button only on last step
+				if(stepNumber == 3){
+					$('.btn-finish').removeClass('disabled');
+				}else{
+					$('.btn-finish').addClass('disabled');
+				}
+			});
+			
+			$(".sw-btn-prev").addClass("btn-default");
+			$(".sw-btn-next").addClass("btn-primary");
+		}
+		
+		$(document).ready(init);
+	</script>
+	</body>
+</html>
