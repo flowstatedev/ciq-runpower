@@ -111,15 +111,15 @@
 	
 	</head>
 	<body>
- <header>
-		<div class="navbar navbar-inverse">
-		<div class="container d-flex justify-content-between">
-			<span class="navbar-brand d-flex align-items-center">
-			<strong>Run Power+ Settings (PREVIEW)</strong>
-			</span>
-		</div>
-		</div>
-	</header>	
+		<header>
+			<div class="navbar navbar-inverse">
+				<div class="container d-flex justify-content-between">
+					<span class="navbar-brand d-flex align-items-center">
+						<strong>Run Power+ Settings (PREVIEW)</strong>
+					</span>
+				</div>
+			</div>
+		</header>	
 	<main role="main">
 		<div class="container">
 			<form id="runpower_form" data-toggle="validator" class="form-horizontal" style="display:none">
@@ -199,103 +199,117 @@
 						<div id="step-2">
 							<div id="form-step-1">
 							<div class="form-group row">
-							<label for="text" class="col-sm-3 col-xs-12 control-label">Power Zones</label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-									<div class="input-group-addon prepend">Number of Zones</div>
-										<select id="select2" name="select2" class="select form-control">
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-										</select>
+								<label for="text" class="col-sm-3 col-xs-12 control-label">Power Zones</label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon prepend">Number of Zones</div>
+											<select id="select2" name="select2" class="select form-control">
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											</select>
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-									<div class="input-group-addon prepend">Zone 1 Min</div>
-									<input id="text" name="text" value="162" type="number" pattern="[0-9]*" inputmode="numeric" min="0" required="required" class="form-control here">
+								<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon prepend">Zone 1 Min</div>
+										<input id="text" name="text" value="162" 
+												type="number" pattern="[0-9]*" inputmode="numeric" min="0" 
+												required="required" class="form-control here">
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-									<div class="input-group-addon prepend">Zone 2 Min</div>
-									<input id="text" name="text" value="199" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon prepend">Zone 2 Min</div>
+										<input id="text" name="text" value="199" 
+												type="number" pattern="[0-9]*" inputmode="numeric" min="0" 
+												required="required" class="form-control here">
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-									<div class="input-group-addon prepend">Zone 3 Min</div>
-									<input id="text" name="text" value="224" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon prepend">Zone 3 Min</div>
+										<input id="text" name="text" value="224" 
+												type="number" pattern="[0-9]*" inputmode="numeric" min="0" 
+												required="required" class="form-control here">
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-									<div class="input-group-addon prepend">Zone 4 Min</div>
-									<input id="text" name="text" value="249" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon prepend">Zone 4 Min</div>
+										<input id="text" name="text" value="249" 
+												type="number" pattern="[0-9]*" inputmode="numeric" min="0" 
+												required="required" class="form-control here">
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-									<div class="input-group-addon prepend">Zone 5 Min</div>
-									<input id="text" name="text" value="286" type="number" pattern="[0-9]*" inputmode="numeric" type="number" min="0" required="required" class="form-control here">
+								<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon prepend">Zone 5 Min</div>
+										<input id="text" name="text" value="286" 
+												type="number" pattern="[0-9]*" inputmode="numeric" min="0" 
+												required="required" class="form-control here">
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-									<div class="input-group-addon prepend">Zone 5 Max</div>
-									<input id="text" name="text" type="number" value="324" type="number" pattern="[0-9]*" inputmode="numeric"  min="0" required="required" class="form-control here">
+								<label for="text" class="col-sm-3 col-xs-12 control-label"></label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon prepend">Zone 5 Max</div>
+										<input id="text" name="text" value="324" 
+												type="number" pattern="[0-9]*" inputmode="numeric" min="0" 
+												required="required" class="form-control here">
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label class="col-sm-3 col-xs-12 control-label" for="text4">FTP</label> 
-							<div class="col-sm-9 col-xs-12">
-								<input id="text4" name="text4" type="number" value="249" type="number" pattern="[0-9]*" inputmode="numeric"  min="0" aria-describedby="text4HelpBlock" class="form-control here"> 
-								<span id="text4HelpBlock" class="form-text text-muted">(Optional) Used to calculate %FTP and IF</span>
-							</div>
+								<label class="col-sm-3 col-xs-12 control-label" for="text4">FTP</label> 
+								<div class="col-sm-9 col-xs-12">
+									<input id="text4" name="text4" value="249" 
+												type="number" pattern="[0-9]*" inputmode="numeric"  min="0" 
+												class="form-control here"> 
+									<div class="help-block with-errors">(Optional) Used to calculate %FTP and IF</div>
+								</div>
 							</div>
 							<div class="form-group row">
-							<label class="col-sm-3 col-xs-12 control-label control-group-label">Power Zone Colors</label> 
-							<div class="col-sm-9 col-xs-12">
-								<label class="custom-control custom-radio ">
-								<input name="radio" type="radio" class="custom-control-input" value="auto" checked> 
-								<span class="custom-control-indicator"></span> 
-								<span class="custom-control-description">Auto</span>
-								</label>
-								<label class="custom-control custom-radio">
-								<input name="radio" type="radio" class="custom-control-input" value="custom"> 
-								<span class="custom-control-indicator"></span> 
-								<span class="custom-control-description">Custom</span>
-								</label>
-							</div>
+								<label class="col-sm-3 col-xs-12 control-label control-group-label">Power Zone Colors</label> 
+								<div class="col-sm-9 col-xs-12">
+									<label class="custom-control custom-radio ">
+									<input name="radio" type="radio" class="custom-control-input" value="auto" checked> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">Auto</span>
+									</label>
+									<label class="custom-control custom-radio">
+									<input name="radio" type="radio" class="custom-control-input" value="custom"> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">Custom</span>
+									</label>
+								</div>
 							</div>
 							<div style="display:none">
 							<div class="form-group row">
@@ -364,76 +378,86 @@
 						<div id="step-3">
 							<div id="form-step-2">
 							<div class="form-group row">
-							<label class="col-sm-3 col-xs-12	control-label control-group-label">Power Alerts</label> 
-							<div class="col-sm-9 col-xs-12">
-								<label class="custom-control custom-radio">
-								<input name="radio1" type="radio" class="custom-control-input" value="off"> 
-								<span class="custom-control-indicator"></span> 
-								<span class="custom-control-description">Off</span>
-								</label>
-								<label class="custom-control custom-radio">
-								<input name="radio1" type="radio" class="custom-control-input" value="lowhigh" checked> 
-								<span class="custom-control-indicator"></span> 
-								<span class="custom-control-description">Low/High</span>
-								</label>
-								<label class="custom-control custom-radio">
-								<input name="radio1" type="radio" class="custom-control-input" value="zone"> 
-								<span class="custom-control-indicator"></span> 
-								<span class="custom-control-description">By Zone</span>
-								</label>
-							</div>
-							</div>
-							<div class="form-group row">
-							<label for="text7" class="col-sm-3 col-xs-12 control-label">Power Alert Frequency</label> 
-							<div class="col-sm-9 col-xs-12">
-								<div class="input-group">
-								<input id="text7" name="text7" type="number" pattern="[0-9]*" inputmode="numeric"  min="1" value="30" required="required" class="form-control here"> 
-								<div class="input-group-addon append">seconds</div>
+								<label class="col-sm-3 col-xs-12	control-label control-group-label">Power Alerts</label> 
+								<div class="col-sm-9 col-xs-12">
+									<label class="custom-control custom-radio">
+									<input name="radio1" type="radio" class="custom-control-input" value="off"> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">Off</span>
+									</label>
+									<label class="custom-control custom-radio">
+									<input name="radio1" type="radio" class="custom-control-input" value="lowhigh" checked> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">Low/High</span>
+									</label>
+									<label class="custom-control custom-radio">
+									<input name="radio1" type="radio" class="custom-control-input" value="zone"> 
+									<span class="custom-control-indicator"></span> 
+									<span class="custom-control-description">By Zone</span>
+									</label>
 								</div>
-								<div class="help-block with-errors"></div>
-							</div>
 							</div>
 							<div class="form-group row">
-							<label for="text7" class="col-sm-3 col-xs-12 control-label">Power Alert Limit</label> 
-							<div class="col-sm-9 col-xs-12">
-								<input id="text7" name="text7" type="number" pattern="[0-9]*" inputmode="numeric"  min="0" value="3" required="required" class="form-control here"> 
-								<div class="help-block with-errors">Enter <b>0</b> for unlimited alerts</div>
-								
-							</div>
-							</div>
-							<div class="form-group row">
-							<label class="col-sm-3 col-xs-12 control-label control-group-label">Power Alert Mode</label> 
-							<div class="col-sm-9 col-xs-12">
-								<label class="custom-control custom-radio">
-								<input name="radio2" type="radio" class="custom-control-input" value="activity"> 
-								<span class="custom-control-indicator"></span> 
-								<span class="custom-control-description">Activity</span>
-								</label>
-								<label class="custom-control custom-radio">
-								<input name="radio2" type="radio" class="custom-control-input" value="laps" checked> 
-								<span class="custom-control-indicator"></span> 
-								<span class="custom-control-description">Laps</span>
-								</label>
-							</div>
+								<label for="text7" class="col-sm-3 col-xs-12 control-label">Power Alert Frequency</label> 
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									<input id="text7" name="text7" 
+										type="number" pattern="[0-9]*" inputmode="numeric"  min="1" value="30" 
+										required="required" class="form-control here"> 
+									<div class="input-group-addon append">seconds</div>
+									</div>
+									<div class="help-block with-errors"></div>
+								</div>
 							</div>
 							<div class="form-group row">
-							<label for="select4" class="col-sm-3 col-xs-12 control-label">Number of Laps</label> 
-							<div class="col-sm-9 col-xs-12">
-								<input id="laps" name="laps" type="number" pattern="[0-9]*" inputmode="numeric" value="2" min="1" required="required" class="form-control here"> 
+								<label for="text7" class="col-sm-3 col-xs-12 control-label">Power Alert Limit</label> 
+								<div class="col-sm-9 col-xs-12">
+									<input id="text7" name="text7" 
+										type="number" pattern="[0-9]*" inputmode="numeric"  min="0" value="3" 
+										required="required" class="form-control here"> 
+									<div class="help-block with-errors">Enter <b>0</b> for unlimited alerts</div>
+									
+								</div>
 							</div>
+							<div class="form-group row">
+								<label class="col-sm-3 col-xs-12 control-label control-group-label">Power Alert Mode</label> 
+								<div class="col-sm-9 col-xs-12">
+									<label class="custom-control custom-radio">
+										<input name="radio2" type="radio" class="custom-control-input" value="activity"> 
+										<span class="custom-control-indicator"></span> 
+										<span class="custom-control-description">Activity</span>
+									</label>
+									<label class="custom-control custom-radio">
+										<input name="radio2" type="radio" class="custom-control-input" value="laps" checked> 
+										<span class="custom-control-indicator"></span> 
+										<span class="custom-control-description">Laps</span>
+									</label>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="select4" class="col-sm-3 col-xs-12 control-label">Number of Laps</label> 
+								<div class="col-sm-9 col-xs-12">
+									<input id="laps" name="laps" value="2" 
+										type="number" pattern="[0-9]*" inputmode="numeric" min="1" 
+										required="required" class="form-control here"> 
+								</div>
 							</div>
 							<div class="form-group row">
 							<label for="text1" class="col-sm-3 col-xs-12 control-label">Lap 1</label> 
 							<div class="col-sm-3 col-xs-6">
 								<div class="input-group">
 									<div class="input-group-addon prepend">Low</div>
-									<input id="text1" name="text1" type="number" pattern="[0-9]*" inputmode="numeric" required="required" class="form-control here" value="150">
+									<input id="text1" name="text1" value="150"
+										type="number" pattern="[0-9]*" inputmode="numeric" 
+										required="required" class="form-control here">
 								</div>
 							</div>
 							<div class="col-sm-3 col-xs-6">
 								<div class="input-group">
 									<div class="input-group-addon prepend">High</div>
-										<input id="text6" name="text6" type="number" pattern="[0-9]*" inputmode="numeric" required="required" class="form-control here" value="200">
+										<input id="text6" name="text6" value="200"
+											type="number" pattern="[0-9]*" inputmode="numeric" 
+											required="required" class="form-control here" >
 								</div>
 							</div>
 							</div>
@@ -715,10 +739,10 @@
 															elmForm.validator('validate');
 															var elmErr = elmForm.find('.has-error');
 															if(elmErr && elmErr.length > 0){
-																alert('Oops we still have error in the form');
+																//alert('Oops we still have error in the form');
 																return false;
 															}else{
-																alert('Great! we are ready to submit form');
+																//alert('Great! we are ready to submit form');
 																elmForm.submit();
 																return false;
 															}
@@ -748,7 +772,7 @@
 					anchorSettings: {
 								markDoneStep: true, // add done css
 								markAllPreviousStepsAsDone: true, // When a step selected by url hash, all previous steps are marked done
-								removeDoneStepOnNavigateBack: true, // While navigate back done step after active step will be cleared
+								//removeDoneStepOnNavigateBack: true, // While navigate back done step after active step will be cleared
 								enableAnchorOnDoneStep: true // Enable/Disable the done steps navigation
 							}
 				 });
